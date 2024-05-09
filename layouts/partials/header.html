@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand" href="{{ .Site.BaseURL }}">
             {{ if .Site.Params.Initials }}
-            <b style="font-weight: 800;">{{ .Site.Params.Initials }}</b>
+            <b style="font-weight: 800;">{{ .Site.Params.Initials | markdownify  }}</b>
             {{ else }}
             <b style="font-weight: 800;">{{ .Site.Params.Name }}</b>
             {{ end }}

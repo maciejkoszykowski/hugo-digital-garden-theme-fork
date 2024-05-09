@@ -7,7 +7,9 @@
 </div>
 <div class="mb-5 py-4">
     <div class="container">
-        <h2 class="bio lh-base fs-1 serif">{{ .Site.Params.Description }}</h2>
+        <p>{{ .Site.Params.Description }}</p>
+		<p>{{ .Site.Params.Description2 }}
+		<a href='../{{ .Site.Params.switch_to }}'>{{ .Site.Params.Description3 }}</a></p>
     </div>
 </div>
 
@@ -28,12 +30,12 @@
       		</div>
 			{{ with .Site.GetPage "section" "garden" }}
 			<div class="d-flex flex-row-reverse">
-        		<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all articles</a>
+        		<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">{{ .Site.Params.show_all }}</a>
       		</div>
       		{{ end }}
 		</div>
     	
-		<!-- Projects -->
+		<!-- Projects 
 		<div class="col-lg-7">
 			{{ with .Site.GetPage "section" "projects" }}
 			<div class="pb-4">
@@ -53,12 +55,13 @@
 				<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all projects</a>
 			</div>    
 			{{ end }}
+				
   		</div>
-	</div>
 
-	<!-- Library -->
+
+	<-- Library --
 	<div class="container py-3">
-		<div class="row justify-content-between my-5">
+		<div class="row justify-content-between my-5">  <div class="col-sm-4 col-lg-3"> -->
 			<div class="col-sm-4 col-lg-3">
 				{{ with .Site.GetPage "section" "library" }}
 				<div class="pb-4">
@@ -66,7 +69,7 @@
 				</div>
 				{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
 				<div class="d-flex">
-					<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all books</a>
+					<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">{{ .Site.Params.show_all }}</a>
 				</div>
 				{{ end }}
 			</div>
@@ -94,5 +97,5 @@
 			</div>
 		</div>
 	</div>
-</div>
+<!-- /div -->
 {{ end }}
